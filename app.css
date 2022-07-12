@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+:root {
+  --bg-danger: #dc3545;
+  --bg-primary: #027bff;
+  --bg-success: rgb(22, 97, 15);
+  --bg-secondary: rgba(255, 255, 255, 0.384);
+  --bg-light: #fff;
+}
+
+ul li > p:first-of-type {
+  pointer-events: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+body {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* todo-app */
+.todo-app {
+  width: 80%;
+}
+
+.todo-app > header h1 {
+  font-family: 'Kaushan Script', cursive;
+  text-align: center;
+  color: rgb(19, 19, 19);
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.205);
+}
+
+.todo-form,
+.todo-list {
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+  border-radius: 0.4rem;
+  margin-top: 1rem;
+}
+
+.todo-form header,
+.todo-list header {
+  background-color: #f8f8f8;
+  border-radius: 0.4rem 0.4rem 0 0;
+  padding: 0.6rem 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.205);
+}
+
+.todo-form main,
+.todo-list main {
+  padding: 1rem;
+  background-color: var(--bg-secondary);
+}
+
+/* todo-form */
+.todo-form input {
+  width: 100%;
+  padding: 0.3rem 0.5rem;
+  outline-color: var(--bg-primary);
+}
+
+.addtodo-btn {
+  padding: 0.4rem;
+  background-color: var(--bg-primary);
+  color: var(--bg-light);
+  border: none;
+  border-radius: 0.2rem;
+  margin-top: 0.5rem;
+}
+
+.clear-btn {
+  background-color: var(--bg-danger);
+  padding: 0.4rem;
+  color: var(--bg-light);
+  border: none;
+  border-radius: 0.2rem;
+  margin: 0.5rem auto 0;
+}
+
+.alert-message {
+  color: black;
+  font-size: 0.8rem;
+  margin-top: 0.2rem;
+  height: 1rem;
+}
+
+/* todo-list */
+
+.todo-list .delete-btn,
+.edit-btn {
+  padding: 0.4rem;
+  color: var(--bg-light);
+  border: none;
+  border-radius: 0.2rem;
+}
+
+.todo-list .delete-btn {
+  background-color: var(--bg-danger);
+}
+
+.todo-list .edit-btn {
+  background-color: var(--bg-primary);
+}
+
+.todo-list ul li {
+  margin: 0.7rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  padding: 5px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.405);
+}
+
+.todo-list ul li p:nth-of-type(1) {
+  margin-left: 0.3rem;
+  flex: 2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.todo-list ul li p:nth-of-type(2) {
+  flex: 1;
+}
+
+input[type='checkbox'] {
+  cursor: pointer;
+}
+
+.status {
+  padding-right: 2rem;
+  padding-left: 2rem;
+}
+
+.heading {
+  display: flex;
+  justify-content: space-between;
+}
+
+.heading h4:nth-child(1) {
+  flex-grow: 2;
+}
+
+.heading h4:nth-child(2) {
+  flex-grow: 1;
+}
+
+.checked {
+  text-decoration: line-through;
+  color: var(--bg-success);
+}
+
+.alert-danger {
+  color: var(--bg-danger);
+}
+
+.alert-success {
+  color: var(--bg-success);
+}
+
+
+/* media queries */
+
+@media (max-width: 768px) {
+  .status{
+    display: none;
+  }
+
+  .heading h4:nth-child(2){
+    display: none;
+  }
+
+  .todo-list ul li p:nth-of-type(1){
+    padding-right: 1rem;
+  }
+}
